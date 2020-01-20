@@ -90,6 +90,16 @@ class Mdl_Tasks extends Response_Model
                 'label' => lang('tax_rate'),
                 'rules' => 'numeric'
             ),
+            'task_quantity' => array(
+                'field' => 'task_quantity',
+                'label' => trans('task_quantity'),
+                'rules' => ''
+            ),
+            'unit_id' => array(
+                'field' => 'unit_id',
+                'label' => trans('unit'),
+                'rules' => 'numeric'
+            ),
         );
     }
 
@@ -119,6 +129,7 @@ class Mdl_Tasks extends Response_Model
         if (!$id) {
             parent::set_form_value('task_finish_date', date('Y-m-d'));
             parent::set_form_value('task_price', get_setting('default_hourly_rate'));
+            parent::set_form_value('task_quantity', '1');
         }
 
         return true;

@@ -61,12 +61,14 @@ class Tasks extends Admin_Controller
         }
 
         $this->load->model('projects/mdl_projects');
+        $this->load->model('units/mdl_units');
         $this->load->model('tax_rates/mdl_tax_rates');
 
         $this->layout->set(
             array(
                 'projects' => $this->mdl_projects->get()->result(),
                 'task_statuses' => $this->mdl_tasks->statuses(),
+                'units' => $this->mdl_units->get()->result(),
                 'tax_rates' => $this->mdl_tax_rates->get()->result(),
             )
         );

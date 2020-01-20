@@ -54,6 +54,25 @@ if ($this->mdl_tasks->form_value('task_id') && $this->mdl_tasks->form_value('tas
                         </div>
 
                         <div class="form-group">
+                            <label for="task_qantity"><?php _trans('quantity'); ?></label>
+                            <input type="text" name="task_quantity" id="task_quantity" class="amount form-control"
+                                   value="<?php echo format_amount($this->mdl_tasks->form_value('task_quantity')); ?>">
+                        </div>
+                        
+                        <div class="form-group">
+                    		<label for="unit_id"><?php _trans('product_unit'); ?></label>
+                    		<select name="unit_id" id="unit_id" class="form-control simple-select">
+                           		<option value="0"><?php _trans('select_unit'); ?></option>
+                           		<?php foreach ($units as $unit) { ?>
+                               		<option value="<?php echo $unit->unit_id; ?>"
+                               		<?php check_select($this->mdl_tasks->form_value('unit_id'), $unit->unit_id); ?>>
+                               			<?php echo $unit->unit_name . '/' . $unit->unit_name_plrl; ?>
+                               		</option>
+                           	   <?php } ?>
+                    		</select>
+                		</div>
+                        
+                        <div class="form-group">
                             <label for="task_price"><?php _trans('task_price'); ?></label>
                             <div class="input-group">
                                 <input type="text" name="task_price" id="task_price" class="amount form-control"
@@ -102,7 +121,7 @@ if ($this->mdl_tasks->form_value('task_id') && $this->mdl_tasks->form_value('tas
                                 <?php } ?>
                             </select>
                         </div>
-
+                        
                     </div>
                 </div>
             </div>
