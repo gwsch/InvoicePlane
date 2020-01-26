@@ -49,13 +49,8 @@
                     $('#item_table tbody:last input[name=item_task_id]').val(items[key].task_id);
                     $('#item_table tbody:last input[name=item_name]').val(items[key].task_name);
                     $('#item_table tbody:last textarea[name=item_description]').val(items[key].task_description);
+                    $('#item_table tbody:last input[name=item_quantity]').val($items[key].task_quantity);
                     $('#item_table tbody:last input[name=item_price]').val(items[key].task_price);
-                    $quantity = items[key].task_quantity;
-					if ($quantity == null) {
-						$quantity = '1.00';
-					}
-                    $('#item_table tbody:last input[name=item_quantity]').val($quantity);
-                    $('#item_table tbody:last select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
                     $('#item_table tbody:last select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
                     $('#item_table tbody:last select[name=item_product_unit_id]').val(items[key].unit_id);
 

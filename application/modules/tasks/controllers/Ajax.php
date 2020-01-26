@@ -33,6 +33,10 @@ class Ajax extends Admin_Controller
 
         $tasks = $this->mdl_tasks->where_in('task_id', $this->input->post('task_ids'))->get()->result();
         foreach ($tasks as $task) {
+			if ($task->task_quantity) {
+				$task->task_price = $task->task_price * $task->task_quantity;
+				$task->task_quantity = format_amount($task->task_quantity);
+			}
             $task->task_price = format_amount($task->task_price);
         }
 
