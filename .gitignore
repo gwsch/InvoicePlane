@@ -17,3 +17,5 @@ adminer.php
 /doc
 /.metadata/
 /RemoteSystemsTempFiles/
+/.buildpath
+/.project
